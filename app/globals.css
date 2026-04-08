@@ -1,26 +1,273 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #030014;
+    --foreground: #FFFFFF;
+    
+    /* ✨ Premium Typography System */
+    --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    
+    /* Font weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    
+    /* Letter spacing */
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+    
+    /* Line heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-normal);
+    letter-spacing: var(--tracking-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings - Sora font for premium feel */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: var(--font-extrabold);
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: var(--font-bold);
+  }
+
+  h3 {
+    font-size: 1.875rem;
+    font-weight: var(--font-semibold);
+  }
+
+  /* Body text - Inter for readability */
+  p {
+    font-family: var(--font-body);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Links and buttons */
+  a, button {
+    font-family: var(--font-body);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* Small text and captions */
+  small, .text-xs, .text-sm {
+    font-weight: var(--font-medium);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* Uppercase labels */
+  .uppercase {
+    font-weight: var(--font-semibold);
+    letter-spacing: var(--tracking-widest);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #030014;
+    --foreground: #FFFFFF;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes background-position-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slide-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+@keyframes music-bar-1 {
+  0%, 100% { height: 20%; }
+  50% { height: 100%; }
+}
+
+@keyframes music-bar-2 {
+  0%, 100% { height: 40%; }
+  50% { height: 80%; }
+}
+
+@keyframes music-bar-3 {
+  0%, 100% { height: 60%; }
+  50% { height: 100%; }
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+  }
+  100% {
+    transform: rotate(var(--angle)) translateY(100vh);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-background-position-spin {
+  animation: background-position-spin 3s linear infinite;
+}
+
+.animate-slide-horizontal {
+  animation: slide-horizontal 20s linear infinite;
+}
+
+.animate-music-bar-1 {
+  animation: music-bar-1 0.5s ease-in-out infinite;
+}
+
+.animate-music-bar-2 {
+  animation: music-bar-2 0.6s ease-in-out infinite;
+}
+
+.animate-music-bar-3 {
+  animation: music-bar-3 0.7s ease-in-out infinite;
+}
+
+.animate-meteor {
+  animation: meteor 5s linear infinite;
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+
+@keyframes line-shadow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.animate-line-shadow {
+  animation: line-shadow 3s linear infinite;
+}
+
+/* ✨ Premium Dark Theme Palette - Cosmic Futuristic */
+:root {
+  /* Primary - Electric Violet */
+  --color-primary: #8B5CF6;
+  --color-primary-light: #A78BFA;
+  --color-primary-dark: #7C3AED;
+  --color-primary-glow: rgba(139, 92, 246, 0.4);
+  
+  /* Secondary - Cosmic Teal */
+  --color-secondary: #14B8A6;
+  --color-secondary-light: #2DD4BF;
+  --color-secondary-dark: #0D9488;
+  --color-secondary-glow: rgba(20, 184, 166, 0.4);
+  
+  /* Accent - Nebula Pink */
+  --color-accent: #EC4899;
+  --color-accent-light: #F472B6;
+  --color-accent-dark: #DB2777;
+  --color-accent-glow: rgba(236, 72, 153, 0.3);
+  
+  /* Backgrounds - Deep Space */
+  --bg-primary: #030014;
+  --bg-secondary: #0C0A1F;
+  --bg-tertiary: #1A163A;
+  --bg-card: rgba(15, 10, 40, 0.6);
+  
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #C7C2DD;
+  --text-muted: #8B85A8;
+  --text-dim: #5B5678;
+  
+  /* Signature Gradients */
+  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  --gradient-secondary: linear-gradient(135deg, #14B8A6 0%, #8B5CF6 100%);
+  --gradient-cosmic: linear-gradient(135deg, #0C0A1F 0%, #1A163A 50%, #0C0A1F 100%);
+}
+
