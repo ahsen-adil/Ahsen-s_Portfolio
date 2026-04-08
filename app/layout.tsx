@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import LoadingScreen from "./components/LoadingScreen";
+import Chat from "./components/Chat";
 
 // Premium modern fonts
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <LoadingScreen />
+        <Chat />
         {children}
       </body>
     </html>
