@@ -27,11 +27,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-transparent border-t border-white/5 overflow-hidden">
+    <footer className="relative bg-transparent border-t border-white/[0.06] overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#7C78E5]/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#7C78E5]/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
@@ -46,18 +46,18 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-teal-500 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-[#7C78E5]/15 border border-[#7C78E5]/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] flex items-center justify-center">
                   <span className="text-xl">⚡</span>
                 </div>
                 <div>
-                  <span className="text-lg font-bold bg-gradient-to-r from-violet-400 to-teal-400 bg-clip-text text-transparent">
+                  <span className="text-lg font-bold font-display tracking-tight text-[#9591F2]">
                     Ahsen's
                   </span>
-                  <span className="text-lg font-bold text-white ml-1">Portfolio</span>
+                  <span className="text-lg font-bold font-display tracking-tight text-white ml-1">Portfolio</span>
                 </div>
               </div>
               
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-md">
+              <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-md">
                 Building intelligent digital experiences that bridge the gap between human ingenuity and machine precision. 
                 Let's create something amazing together.
               </p>
@@ -75,7 +75,7 @@ export default function Footer() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                    className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] hover:border-[#7C78E5]/40 transition-all duration-300 cursor-pointer"
                     aria-label={social.name}
                   >
                     {social.icon === 'GitHub' && (
@@ -111,7 +111,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-sm font-semibold text-white uppercase tracking-wider mb-4"
+              className="text-xs font-semibold font-display text-white uppercase tracking-wider mb-4"
             >
               Explore
             </motion.h4>
@@ -126,9 +126,9 @@ export default function Footer() {
                 >
                   <Link
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-zinc-400 text-sm hover:text-white transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-violet-500/50 group-hover:bg-violet-400 transition-colors" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7C78E5]/50 group-hover:bg-[#9591F2] transition-colors" />
                     {link.name}
                   </Link>
                 </motion.li>
@@ -143,7 +143,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm font-semibold text-white uppercase tracking-wider mb-4"
+              className="text-xs font-semibold font-display text-white uppercase tracking-wider mb-4"
             >
               Sections
             </motion.h4>
@@ -158,9 +158,9 @@ export default function Footer() {
                 >
                   <Link
                     href={section.href}
-                    className="text-gray-400 text-sm hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-zinc-400 text-sm hover:text-white transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500/50 group-hover:bg-teal-400 transition-colors" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7C78E5]/50 group-hover:bg-[#9591F2] transition-colors" />
                     {section.name}
                   </Link>
                 </motion.li>
@@ -175,10 +175,10 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mb-12 p-6 rounded-2xl bg-black/50 border border-white/10 text-center"
+          className="mb-12 p-6 rounded-2xl bg-[#0D0F13]/85 border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_12px_28px_-8px_rgba(0,0,0,0.6)] text-center"
         >
-          <h3 className="text-xl font-bold text-white mb-2">Ready to work together?</h3>
-          <p className="text-gray-400 text-sm mb-4">
+          <h3 className="text-xl font-bold font-display tracking-tight text-white mb-2">Ready to work together?</h3>
+          <p className="text-zinc-400 text-sm mb-4">
             Let's discuss how I can help bring your ideas to life.
           </p>
           <button
@@ -188,7 +188,7 @@ export default function Footer() {
                 contactSection.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-violet-600 to-teal-600 text-white font-medium text-sm hover:scale-105 transition-all duration-300 shadow-lg shadow-violet-500/25 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-b from-[#8580F2] to-[#6E69DF] text-white font-medium text-sm hover:scale-105 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_4px_14px_-2px_rgba(112,107,230,0.35)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_6px_20px_-2px_rgba(112,107,230,0.45)] cursor-pointer"
           >
             Get In Touch
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -198,7 +198,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5">
+        <div className="pt-8 border-t border-white/[0.06]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Copyright */}
             <motion.p
@@ -206,23 +206,10 @@ export default function Footer() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-gray-500 text-sm text-center md:text-left"
+              className="text-zinc-500 text-sm text-center md:text-left"
             >
               © {currentYear} Ahsen's Portfolio. All rights reserved.
             </motion.p>
-
-            {/* Built with */}
-            {/* <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-center gap-2 text-gray-500 text-sm"
-            >
-              <span>Built with</span>
-              <span className="text-red-400">❤</span>
-              <span>using Next.js & Tailwind CSS</span>
-            </motion.div> */}
 
             {/* Back to top */}
             <motion.a
@@ -232,7 +219,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -2 }}
-              className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-all duration-300"
+              className="flex items-center gap-2 text-zinc-400 hover:text-white text-sm transition-all duration-300"
             >
               <span>Back to top</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

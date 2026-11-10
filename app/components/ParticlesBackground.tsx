@@ -18,7 +18,7 @@ export default function ParticlesBackground() {
       
       const x = Math.random() * 100;
       const y = Math.random() * 100;
-      const size = Math.random() * 3 + 1;
+      const size = Math.random() * 2.5 + 1;
       const duration = Math.random() * 3 + 2;
       const delay = Math.random() * 2;
 
@@ -30,24 +30,22 @@ export default function ParticlesBackground() {
         height: ${size}px;
         background: white;
         border-radius: 50%;
-        opacity: ${Math.random() * 0.5 + 0.5};
-        box-shadow: 0 0 6px rgba(255, 255, 255, 1);
+        opacity: ${Math.random() * 0.35 + 0.15};
+        box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
         animation: twinkle ${duration}s ease-in-out infinite;
         animation-delay: ${delay}s;
       `;
 
       container.appendChild(particle);
     }
-
-    console.log('✅ Created', particleCount, 'particles');
   }, []);
 
   return (
     <>
       <style>{`
         @keyframes twinkle {
-          0%, 100% { opacity: 0.3; transform: scale(0.8); }
-          50% { opacity: 1; transform: scale(1.2); }
+          0%, 100% { opacity: 0.2; transform: scale(0.8); }
+          50% { opacity: 0.7; transform: scale(1.1); }
         }
       `}</style>
       

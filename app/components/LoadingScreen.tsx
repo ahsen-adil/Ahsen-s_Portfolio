@@ -37,14 +37,14 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: '-100%' }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-[#08090B] flex items-center justify-center overflow-hidden"
         >
-          {/* Animated background grid */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.1)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+          {/* Subtle background grid */}
+          <div className="absolute inset-0 opacity-15">
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(124,120,229,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(124,120,229,0.08)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
           </div>
 
-          {/* Floating orbs */}
+          {/* Ambient orbs */}
           <motion.div
             animate={{
               x: [0, 100, 0],
@@ -52,7 +52,7 @@ export default function LoadingScreen() {
               scale: [1, 1.3, 1],
             }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute top-1/4 left-1/4 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#7C78E5]/5 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -61,7 +61,7 @@ export default function LoadingScreen() {
               scale: [1, 1.2, 1],
             }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#7C78E5]/4 rounded-full blur-3xl"
           />
 
           {/* Main content */}
@@ -77,7 +77,7 @@ export default function LoadingScreen() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                  className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-teal-500 flex items-center justify-center"
+                  className="w-12 h-12 rounded-xl bg-[#7C78E5]/15 border border-[#7C78E5]/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] flex items-center justify-center"
                 >
                   <span className="text-2xl">⚡</span>
                 </motion.div>
@@ -87,9 +87,9 @@ export default function LoadingScreen() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-3xl sm:text-4xl font-bold"
+                className="text-3xl sm:text-4xl font-bold font-display tracking-tight"
               >
-                <span className="bg-gradient-to-r from-violet-400 via-pink-400 to-teal-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-white via-[#C4C2F7] to-[#9591F2] bg-clip-text text-transparent">
                   Ahsen's
                 </span>
                 <span className="text-white ml-2">Portfolio</span>
@@ -103,15 +103,15 @@ export default function LoadingScreen() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mb-8"
             >
-              <p className="text-gray-400 text-sm font-mono">
-                <span className="text-violet-400">{'>'}</span>{' '}
-                <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-violet-400 pr-1 animate-[typing_2s_steps(20)_infinite,blink_0.75s_step-end_infinite]">
+              <p className="text-zinc-400 text-sm font-mono">
+                <span className="text-[#9591F2]">{'>'}</span>{' '}
+                <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-[#9591F2] pr-1 animate-[typing_2s_steps(20)_infinite,blink_0.75s_step-end_infinite]">
                   Initializing creative environment...
                 </span>
               </p>
             </motion.div>
 
-            {/* Unique progress indicator */}
+            {/* Progress indicator */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -125,7 +125,7 @@ export default function LoadingScreen() {
                   <path
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                     fill="none"
-                    stroke="rgba(139, 92, 246, 0.2)"
+                    stroke="rgba(124, 120, 229, 0.15)"
                     strokeWidth="2"
                   />
                   {/* Progress circle */}
@@ -142,12 +142,11 @@ export default function LoadingScreen() {
                   {/* Gradient definition */}
                   <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#8B5CF6" />
-                      <stop offset="100%" stopColor="#14B8A6" />
+                      <stop offset="0%" stopColor="#7C78E5" />
+                      <stop offset="100%" stopColor="#9591F2" />
                     </linearGradient>
                   </defs>
                 </svg>
-                
                 {/* Percentage in center */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-xs font-bold text-white">
@@ -159,7 +158,7 @@ export default function LoadingScreen() {
               {/* Linear progress bar */}
               <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-violet-500 to-teal-500 rounded-full"
+                  className="h-full bg-gradient-to-r from-[#7C78E5] to-[#9591F2] rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${Math.min(progress, 100)}%` }}
                   transition={{ duration: 0.3 }}

@@ -31,28 +31,28 @@ const techSlugs = [
   'kubernetes',
 ];
 
-// Category data
+// Category data - unified under single muted accent
 const experiences = [
   {
     id: 'agents',
     heading: 'AI Agents',
     description:
       'I build autonomous AI agents powered by LLMs and modern APIs that can reason, communicate, and execute complex tasks. These intelligent systems adapt to real-world scenarios, provide smart responses, and act as virtual assistants capable of handling everything from customer support to data analysis.',
-    iconColor: '#A855F7',
+    iconColor: '#9591F2',
   },
   {
     id: 'automation',
     heading: 'AI & Automation',
     description:
       'I design intelligent workflows that eliminate repetitive tasks and boost productivity. By integrating AI tools, automation platforms like n8n, and custom scripts, I help streamline operations, reduce manual effort, and enable teams to focus on what truly matters—innovation and growth.',
-    iconColor: '#FF4D4D',
+    iconColor: '#9591F2',
   },
   {
     id: 'fullstack',
     heading: 'Full Stack Development',
     description:
       'I craft end-to-end web applications using cutting-edge technologies like Next.js, TypeScript, and modern databases. From responsive frontends to robust APIs and scalable backends, I deliver seamless digital experiences that are performant, maintainable, and user-focused.',
-    iconColor: '#0070F3',
+    iconColor: '#9591F2',
   },
 ];
 
@@ -144,9 +144,8 @@ export default function ExperienceSection() {
     <section className="relative flex items-center justify-center bg-transparent px-4 sm:px-6 lg:px-8 py-8 sm:py-12 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-20 -right-20 sm:-top-32 sm:-right-32 lg:-top-40 lg:-right-40 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-violet-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 sm:-bottom-32 sm:-left-32 lg:-bottom-40 lg:-left-40 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-teal-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-teal-500/5 rounded-full blur-3xl" />
+        <div className="absolute -top-20 -right-20 sm:-top-32 sm:-right-32 lg:-top-40 lg:-right-40 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-[#7C78E5]/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 sm:-bottom-32 sm:-left-32 lg:-bottom-40 lg:-left-40 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-[#7C78E5]/4 rounded-full blur-3xl" />
       </div>
 
       <div className="relative w-full max-w-6xl mx-auto">
@@ -155,31 +154,28 @@ export default function ExperienceSection() {
           <div className="col-span-1 flex items-center justify-center order-1 w-full mb-10">
             <div className="relative w-full max-w-sm mx-auto">
               {/* Main glassmorphism container */}
-              <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl shadow-violet-500/10 overflow-hidden">
-                {/* Animated gradient border effect */}
-                <div className="absolute inset-0 bg-white/5 pointer-events-none" />
-                
+              <div className="relative bg-[#0D0F13]/85 backdrop-blur-xl rounded-3xl border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_16px_36px_-12px_rgba(0,0,0,0.6)] overflow-hidden">
                 {/* Content wrapper with padding */}
                 <div className="relative p-4 sm:p-6">
                   {/* Top badge with stats */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <div className="flex -space-x-2">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-violet-500 border-2 border-gray-900 flex items-center justify-center text-xs font-bold text-white">
+                        <div className="w-8 h-8 rounded-full bg-white/[0.08] border-2 border-[#0D0F13] flex items-center justify-center text-xs font-semibold text-white shadow-sm">
                           15+
                         </div>
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-500 to-teal-500 border-2 border-gray-900 flex items-center justify-center text-xs font-bold text-white">
+                        <div className="w-8 h-8 rounded-full bg-[#7C78E5]/20 border-2 border-[#0D0F13] flex items-center justify-center text-xs font-semibold text-[#C4C2F7] shadow-sm">
                           AI
                         </div>
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-red-500 border-2 border-gray-900 flex items-center justify-center text-xs font-bold text-white">
+                        <div className="w-8 h-8 rounded-full bg-white/[0.05] border-2 border-[#0D0F13] flex items-center justify-center text-xs font-semibold text-zinc-300 shadow-sm">
                           Web
                         </div>
                       </div>
-                      <span className="text-xs text-gray-400 font-medium">Technologies</span>
+                      <span className="text-xs text-zinc-400 font-medium">Technologies</span>
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-xs text-gray-300 font-medium">Active</span>
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-xs text-zinc-300 font-medium">Active</span>
                     </div>
                   </div>
                 </div>
@@ -192,42 +188,33 @@ export default function ExperienceSection() {
                 </div>
 
                 {/* Bottom info bar with padding */}
-                <div className="relative z-10 p-4 sm:p-6 pt-3 sm:pt-4 border-t border-white/10 mt-4">
+                <div className="relative z-10 p-4 sm:p-6 pt-3 sm:pt-4 border-t border-white/[0.06] mt-4">
                   <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                     <div className="group">
-                      <div className="text-sm sm:text-lg font-bold text-white group-hover:text-violet-400 transition-colors">Full</div>
-                      <div className="text-[8px] sm:text-xs text-gray-500 uppercase tracking-wider">Stack</div>
+                      <div className="text-sm sm:text-lg font-bold font-display text-white group-hover:text-[#9591F2] transition-colors">Full</div>
+                      <div className="text-[8px] sm:text-xs text-zinc-500 uppercase tracking-wider">Stack</div>
                     </div>
                     <div className="group">
-                      <div className="text-sm sm:text-lg font-bold text-white group-hover:text-teal-400 transition-colors">AI</div>
-                      <div className="text-[8px] sm:text-xs text-gray-500 uppercase tracking-wider">Powered</div>
+                      <div className="text-sm sm:text-lg font-bold font-display text-white group-hover:text-[#9591F2] transition-colors">AI</div>
+                      <div className="text-[8px] sm:text-xs text-zinc-500 uppercase tracking-wider">Powered</div>
                     </div>
                     <div className="group">
-                      <div className="text-sm sm:text-lg font-bold text-white group-hover:text-violet-400 transition-colors">24/7</div>
-                      <div className="text-[8px] sm:text-xs text-gray-500 uppercase tracking-wider">Available</div>
+                      <div className="text-sm sm:text-lg font-bold font-display text-white group-hover:text-[#9591F2] transition-colors">24/7</div>
+                      <div className="text-[8px] sm:text-xs text-zinc-500 uppercase tracking-wider">Available</div>
                     </div>
                   </div>
                 </div>
-
-                {/* Corner decorations */}
-                <div className="absolute top-0 left-0 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-br from-violet-500/20 to-transparent rounded-br-full pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-tl from-teal-500/20 to-transparent rounded-tl-full pointer-events-none" />
               </div>
 
-              {/* Floating elements around the container */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-violet-500 to-violet-500 rounded-xl sm:rounded-2xl blur-lg opacity-60 animate-pulse" />
-              <div className="absolute -bottom-4 -left-4 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 to-teal-500 rounded-xl sm:rounded-2xl blur-lg opacity-60 animate-pulse" style={{ animationDelay: '1s' }} />
+              {/* Subtle outer border accents */}
+              <div className="absolute -inset-4 sm:-inset-8 border border-white/[0.03] rounded-2xl sm:rounded-[40px] pointer-events-none" />
               
-              {/* Outer glow rings */}
-              <div className="absolute -inset-4 sm:-inset-8 border border-violet-500/10 rounded-2xl sm:rounded-[40px] pointer-events-none" />
-              <div className="absolute -inset-6 sm:-inset-12 border border-teal-500/5 rounded-2xl sm:rounded-[56px] pointer-events-none" />
+              {/* Background ambient depth */}
+              <div className="absolute -inset-4 bg-[#7C78E5]/5 rounded-3xl blur-2xl -z-10 opacity-40" />
               
-              {/* Background decorative glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-violet-500/20 via-violet-500/20 to-teal-500/20 rounded-3xl blur-2xl -z-10 opacity-50" />
-              
-              {/* Floating tech badges */}
+              {/* Floating tech badge */}
               <motion.div 
-                className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+                className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#12141A]/95 backdrop-blur-md rounded-full border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_12px_rgba(0,0,0,0.5)]"
                 initial={{ y: 0 }}
                 animate={{ y: [-2, 2, -2] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -241,9 +228,9 @@ export default function ExperienceSection() {
           <div className="col-span-1 order-2">
             <div className="relative">
               {/* Main content card with glassmorphism */}
-              <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-violet-500/10 overflow-hidden">
+              <div className="relative bg-[#0D0F13]/85 backdrop-blur-xl rounded-3xl border border-white/[0.08] p-6 sm:p-8 lg:p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_16px_36px_-12px_rgba(0,0,0,0.6)] overflow-hidden">
                 {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-transparent to-teal-500/5 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#7C78E5]/5 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Content container */}
                 <div className="relative z-10">
@@ -254,20 +241,19 @@ export default function ExperienceSection() {
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.3 }}
-                      className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-lg"
-                      style={{ color: currentExperience.iconColor }}
+                      className="w-16 h-16 rounded-2xl bg-[#7C78E5]/12 backdrop-blur-sm flex items-center justify-center border border-[#7C78E5]/25 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] text-[#9591F2]"
                     >
                       <CurrentIcon />
                     </motion.div>
                   </div>
 
                   {/* Heading */}
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center text-white mb-5 tracking-tight">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-display text-center text-white mb-5 tracking-tight">
                     {currentExperience.heading}
                   </h2>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-center text-sm sm:text-base leading-relaxed mb-10 max-w-lg mx-auto">
+                  <p className="text-zinc-400 text-center text-sm sm:text-base leading-relaxed mb-10 max-w-lg mx-auto">
                     {currentExperience.description}
                   </p>
 
@@ -278,7 +264,7 @@ export default function ExperienceSection() {
                       onClick={handlePrev}
                       whileHover={{ scale: 1.1, x: -4 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-violet-500/25"
+                      className="group w-12 h-12 rounded-full bg-white/[0.04] backdrop-blur-sm border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] cursor-pointer"
                       aria-label="Previous experience"
                     >
                       <svg
@@ -305,9 +291,9 @@ export default function ExperienceSection() {
                             setDirection(index > currentIndex ? 'right' : 'left');
                             setCurrentIndex(index);
                           }}
-                          className="relative w-2 h-2 rounded-full transition-all duration-300"
+                          className="relative w-2 h-2 rounded-full transition-all duration-300 cursor-pointer"
                           style={{
-                            backgroundColor: index === currentIndex ? currentExperience.iconColor : 'rgba(255,255,255,0.2)',
+                            backgroundColor: index === currentIndex ? '#7C78E5' : 'rgba(255,255,255,0.15)',
                             width: index === currentIndex ? '24px' : '8px',
                           }}
                           whileHover={{ scale: 1.2 }}
@@ -321,7 +307,7 @@ export default function ExperienceSection() {
                       onClick={handleNext}
                       whileHover={{ scale: 1.1, x: 4 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-violet-500/25"
+                      className="group w-12 h-12 rounded-full bg-white/[0.04] backdrop-blur-sm border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] cursor-pointer"
                       aria-label="Next experience"
                     >
                       <svg
@@ -359,9 +345,8 @@ export default function ExperienceSection() {
                 </AnimatePresence>
               </div>
 
-              {/* Decorative elements around card */}
-              <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
-              <div className="absolute -bottom-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" />
+              {/* Decorative subtle border line */}
+              <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#7C78E5]/30 to-transparent" />
             </div>
 
             {/* Category pills */}
@@ -375,15 +360,11 @@ export default function ExperienceSection() {
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border cursor-pointer ${
                     index === currentIndex
-                      ? 'bg-white/10 backdrop-blur-sm border-white/30 text-white shadow-lg shadow-violet-500/20'
-                      : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:text-white'
+                      ? 'bg-[#7C78E5]/15 border-[#7C78E5]/40 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_2px_8px_rgba(124,120,229,0.2)]'
+                      : 'bg-white/[0.03] border-white/[0.08] text-zinc-400 hover:bg-white/[0.06] hover:border-white/20 hover:text-white'
                   }`}
-                  style={{
-                    borderColor: index === currentIndex ? exp.iconColor : undefined,
-                    color: index === currentIndex ? exp.iconColor : undefined,
-                  }}
                 >
                   {exp.heading}
                 </motion.button>

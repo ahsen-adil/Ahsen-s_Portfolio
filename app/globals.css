@@ -3,18 +3,22 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-heading: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-plus-jakarta-sans), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-plus-jakarta-sans), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #7C78E5;
+  --color-accent-light: #9591F2;
+  --color-accent-dark: #6460D1;
 }
 
 @layer base {
   :root {
-    --background: #030014;
-    --foreground: #FFFFFF;
+    --background: #08090B;
+    --foreground: #F4F4F6;
     
-    /* ✨ Premium Typography System */
-    --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-    --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    /* Modern Premium Typography System */
+    --font-body: var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-display: var(--font-plus-jakarta-sans), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
     
     /* Font weights */
     --font-light: 300;
@@ -24,22 +28,54 @@
     --font-bold: 700;
     --font-extrabold: 800;
     
-    /* Letter spacing */
-    --tracking-tight: -0.025em;
+    /* Letter spacing - refined readability */
+    --tracking-tighter: -0.035em;
+    --tracking-tight: -0.02em;
     --tracking-normal: 0em;
-    --tracking-wide: 0.025em;
+    --tracking-wide: 0.015em;
     --tracking-wider: 0.05em;
     --tracking-widest: 0.1em;
     
     /* Line heights */
-    --leading-tight: 1.25;
+    --leading-tight: 1.15;
+    --leading-snug: 1.35;
     --leading-normal: 1.5;
-    --leading-relaxed: 1.625;
+    --leading-relaxed: 1.65;
     --leading-loose: 2;
+
+    /* Cohesive Theme Palette - Dark Charcoal & Muted Slate Iris */
+    --color-primary: #7C78E5;
+    --color-primary-light: #9591F2;
+    --color-primary-dark: #6460D1;
+    --color-primary-glow: rgba(124, 120, 229, 0.15);
+    
+    --color-accent: #7C78E5;
+    --color-accent-light: #9591F2;
+    --color-accent-dark: #6460D1;
+    --color-accent-subtle: rgba(124, 120, 229, 0.08);
+    --color-accent-border: rgba(124, 120, 229, 0.25);
+    
+    /* Backgrounds - Charcoal & Near-Black */
+    --bg-primary: #08090B;
+    --bg-secondary: #0E1013;
+    --bg-tertiary: #14161B;
+    --bg-card: rgba(16, 18, 22, 0.78);
+    
+    /* Text - Warm White System */
+    --text-primary: #F4F4F6;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    --text-dim: #52525B;
+    
+    /* Subtle Refined Gradients */
+    --gradient-primary: linear-gradient(135deg, #7C78E5 0%, #9591F2 100%);
+    --gradient-subtle: linear-gradient(135deg, rgba(124, 120, 229, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.01) 100%);
   }
 
   body {
-    background: var(--background);
+    background-color: var(--background);
+    background-image: radial-gradient(at 50% 0%, rgba(124, 120, 229, 0.03) 0px, transparent 65%);
     color: var(--foreground);
     font-family: var(--font-body);
     font-weight: var(--font-normal);
@@ -47,32 +83,37 @@
     letter-spacing: var(--tracking-normal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
-  /* Headings - Sora font for premium feel */
+  /* Headings - Plus Jakarta Sans for premium modern character */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: var(--font-bold);
     line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tight);
+    color: var(--text-primary);
   }
 
   h1 {
     font-size: 3rem;
     font-weight: var(--font-extrabold);
+    letter-spacing: var(--tracking-tighter);
   }
 
   h2 {
     font-size: 2.25rem;
     font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-tight);
   }
 
   h3 {
     font-size: 1.875rem;
     font-weight: var(--font-semibold);
+    letter-spacing: var(--tracking-tight);
   }
 
-  /* Body text - Inter for readability */
+  /* Body text - Geist for crisp, clean readability */
   p {
     font-family: var(--font-body);
     line-height: var(--leading-relaxed);
@@ -81,27 +122,28 @@
   /* Links and buttons */
   a, button {
     font-family: var(--font-body);
-    font-weight: var(--font-medium);
     letter-spacing: var(--tracking-wide);
   }
 
   /* Small text and captions */
   small, .text-xs, .text-sm {
-    font-weight: var(--font-medium);
     letter-spacing: var(--tracking-wide);
   }
 
   /* Uppercase labels */
   .uppercase {
-    font-weight: var(--font-semibold);
     letter-spacing: var(--tracking-widest);
   }
 }
 
+.font-display {
+  font-family: var(--font-display);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #030014;
-    --foreground: #FFFFFF;
+    --background: #08090B;
+    --foreground: #F4F4F6;
   }
 }
 
@@ -232,42 +274,3 @@
 .animate-line-shadow {
   animation: line-shadow 3s linear infinite;
 }
-
-/* ✨ Premium Dark Theme Palette - Cosmic Futuristic */
-:root {
-  /* Primary - Electric Violet */
-  --color-primary: #8B5CF6;
-  --color-primary-light: #A78BFA;
-  --color-primary-dark: #7C3AED;
-  --color-primary-glow: rgba(139, 92, 246, 0.4);
-  
-  /* Secondary - Cosmic Teal */
-  --color-secondary: #14B8A6;
-  --color-secondary-light: #2DD4BF;
-  --color-secondary-dark: #0D9488;
-  --color-secondary-glow: rgba(20, 184, 166, 0.4);
-  
-  /* Accent - Nebula Pink */
-  --color-accent: #EC4899;
-  --color-accent-light: #F472B6;
-  --color-accent-dark: #DB2777;
-  --color-accent-glow: rgba(236, 72, 153, 0.3);
-  
-  /* Backgrounds - Deep Space */
-  --bg-primary: #030014;
-  --bg-secondary: #0C0A1F;
-  --bg-tertiary: #1A163A;
-  --bg-card: rgba(15, 10, 40, 0.6);
-  
-  /* Text */
-  --text-primary: #FFFFFF;
-  --text-secondary: #C7C2DD;
-  --text-muted: #8B85A8;
-  --text-dim: #5B5678;
-  
-  /* Signature Gradients */
-  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-  --gradient-secondary: linear-gradient(135deg, #14B8A6 0%, #8B5CF6 100%);
-  --gradient-cosmic: linear-gradient(135deg, #0C0A1F 0%, #1A163A 50%, #0C0A1F 100%);
-}
-

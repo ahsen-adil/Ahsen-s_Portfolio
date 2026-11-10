@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Plus_Jakarta_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import LoadingScreen from "./components/LoadingScreen";
 import Chat from "./components/Chat";
 
-// Premium modern fonts
-const inter = Inter({
-  variable: "--font-inter",
+// Modern premium professional typography (variable fonts)
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -30,10 +28,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${sora.variable} h-full antialiased`}
+      className={`${geist.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >
       <body 
-        className="min-h-full flex flex-col font-[family-name:var(--font-inter)]"
+        className="min-h-full flex flex-col font-sans bg-[#090A0C] text-[#F4F4F6]"
         suppressHydrationWarning
       >
         <LoadingScreen />

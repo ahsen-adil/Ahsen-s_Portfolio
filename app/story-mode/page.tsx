@@ -33,11 +33,11 @@ export default function StoryModePage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-black overflow-hidden">
+    <main className="relative min-h-screen bg-[#08090B] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#7C78E5]/4 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#7C78E5]/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -48,17 +48,17 @@ export default function StoryModePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
-            <span className="text-xs font-medium text-violet-300 uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#7C78E5]/10 border border-[#7C78E5]/25 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] mb-6">
+            <span className="text-xs font-semibold text-[#C4C2F7] uppercase tracking-wider">
               My Journey
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-            <span className="bg-gradient-to-r from-violet-400 to-teal-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-4">
+            <span className="bg-gradient-to-r from-white via-[#C4C2F7] to-[#9591F2] bg-clip-text text-transparent">
               Story Mode
             </span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
             From a curious student to an AI Engineer building intelligent systems
           </p>
         </motion.div>
@@ -66,7 +66,7 @@ export default function StoryModePage() {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/50 via-teal-500/50 to-transparent" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#7C78E5]/40 via-[#7C78E5]/20 to-transparent" />
 
           {/* Sections */}
           <div className="space-y-12">
@@ -82,16 +82,16 @@ export default function StoryModePage() {
                 } gap-8`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-violet-500 to-teal-500 border-4 border-black z-10" />
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#7C78E5] border-4 border-[#08090B] shadow-[0_0_8px_rgba(124,120,229,0.5)] z-10" />
 
                 {/* Content */}
                 <div className="flex-1 ml-12 md:ml-0 md:px-12">
-                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                  <div className="p-6 rounded-2xl bg-[#0D0F13]/85 border border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_12px_28px_-8px_rgba(0,0,0,0.6)] backdrop-blur-sm">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-3xl">{section.icon}</span>
-                      <h2 className="text-2xl font-bold text-white">{section.title}</h2>
+                      <h2 className="text-2xl font-bold font-display tracking-tight text-white">{section.title}</h2>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{section.content}</p>
+                    <p className="text-zinc-300 leading-relaxed font-normal">{section.content}</p>
                   </div>
                 </div>
 
@@ -112,7 +112,7 @@ export default function StoryModePage() {
         >
           <Link
             href="/"
-            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium text-sm hover:bg-white/10 transition-all text-center flex items-center justify-center gap-2"
+            className="px-6 py-3 rounded-full bg-white/[0.03] border border-white/10 hover:border-white/25 text-zinc-300 hover:text-white font-medium text-sm hover:bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -121,7 +121,7 @@ export default function StoryModePage() {
           </Link>
           <Link
             href="/future-me"
-            className="px-6 py-3 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-200 font-medium text-sm hover:bg-teal-500/30 transition-all text-center flex items-center justify-center gap-2"
+            className="px-6 py-3 rounded-full bg-gradient-to-b from-[#8580F2] to-[#6E69DF] text-white font-medium text-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_4px_14px_-2px_rgba(112,107,230,0.35)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_6px_20px_-2px_rgba(112,107,230,0.45)] transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
           >
             Future Me
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

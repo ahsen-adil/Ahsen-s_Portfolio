@@ -11,13 +11,15 @@ gsap.registerPlugin(ScrollTrigger);
 const Card = ({ children, className, colSpan, rowSpan }) => (
   <div className={`
     relative overflow-hidden rounded-3xl 
-    bg-zinc-900/50 backdrop-blur-xl border border-white/10
-    shadow-lg hover:shadow-blue-500/10 hover:border-white/20 transition-all duration-500
+    bg-[#0D0F13]/85 backdrop-blur-xl border border-white/[0.08]
+    shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_12px_28px_-8px_rgba(0,0,0,0.6)] 
+    hover:border-white/20 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_16px_36px_-8px_rgba(0,0,0,0.7)] 
+    transition-all duration-500
     flex flex-col
     ${colSpan} ${rowSpan} ${className}
     group
   `}>
-    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     {children}
   </div>
 );
@@ -35,8 +37,8 @@ const WallpaperGallery = () => {
                 ))}
              </div>
              {/* Gradients */}
-             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black/50 to-transparent pointer-events-none"/>
-             <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"/>
+             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#0D0F13]/90 to-transparent pointer-events-none"/>
+             <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#0D0F13]/90 to-transparent pointer-events-none"/>
         </div>
     );
 };
@@ -90,8 +92,8 @@ const IntroCard = () => {
     return (
         <div className="p-8 flex flex-col justify-between h-full relative">
             <div>
-                <h2 className="text-4xl font-syne font-bold mb-4 text-white">Hi, I'm Ahsen Adil</h2>
-                <p className="text-white/60 text-lg leading-relaxed max-w-md mb-4 md:mb-0">
+                <h2 className="text-4xl font-bold font-display tracking-tight mb-4 text-white">Hi, I'm Ahsen Adil</h2>
+                <p className="text-zinc-400 text-lg leading-relaxed max-w-md mb-4 md:mb-0">
                     Building intelligent AI-driven solutions that <br /> bridge innovation, automation, and real-world impact.
                 </p>
             </div>
@@ -104,12 +106,12 @@ const IntroCard = () => {
                         onChange={(e) => setInputValue(e.target.value)}
                         placeholder="Say hello..."
                         disabled={loading}
-                        className="bg-white/10 border border-white/10 rounded-full px-6 py-3 w-full text-white placeholder:text-white/30 focus:outline-none focus:bg-white/20 transition-all disabled:opacity-50"
+                        className="bg-white/[0.04] border border-white/10 rounded-full px-6 py-3 w-full text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#7C78E5]/50 focus:bg-white/[0.08] shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)] transition-all disabled:opacity-50"
                     />
                     <button 
                         type="submit" 
                         disabled={loading || !inputValue.trim()}
-                        className="bg-white text-black rounded-full px-6 py-3 font-bold hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        className="bg-gradient-to-b from-white to-zinc-200 text-zinc-950 rounded-full px-6 py-3 font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.4)] hover:from-zinc-100 hover:to-zinc-300 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
                     >
                         {loading ? (
                             <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
@@ -125,7 +127,7 @@ const IntroCard = () => {
                     <motion.div
                         initial={{ x: -20, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
-                        className="absolute -top-12 left-0 text-green-400 font-medium"
+                        className="absolute -top-12 left-0 text-emerald-400 font-medium"
                     >
                         ✓ Message sent!
                     </motion.div>
@@ -152,50 +154,34 @@ const IntroCard = () => {
 
 const ToolsMarquee = () => {
     const tools = [
-        // AI & ML
-        // { name: "OpenAI", src: "https://cdn.simpleicons.org/openai" },
         { name: "Anthropic", src: "https://cdn.simpleicons.org/anthropic" },
         { name: "Google Gemini", src: "https://cdn.simpleicons.org/googlegemini" },
         { name: "HuggingFace", src: "https://cdn.simpleicons.org/huggingface" },
         { name: "Ollama", src: "https://cdn.simpleicons.org/ollama" },
-        // { name: "Groq", src: "https://cdn.simpleicons.org/groq" },
-        
-        // Frontend
         { name: "Next.js", src: "https://cdn.simpleicons.org/nextdotjs" },
         { name: "React", src: "https://cdn.simpleicons.org/react" },
         { name: "JavaScript", src: "https://cdn.simpleicons.org/javascript" },
         { name: "TypeScript", src: "https://cdn.simpleicons.org/typescript" },
         { name: "Tailwind", src: "https://cdn.simpleicons.org/tailwindcss" },
         { name: "Framer", src: "https://cdn.simpleicons.org/framer" },
-        
-        // Backend & Runtime
         { name: "Node.js", src: "https://cdn.simpleicons.org/nodedotjs" },
         { name: "Python", src: "https://cdn.simpleicons.org/python" },
         { name: "Express", src: "https://cdn.simpleicons.org/express" },
         { name: "MCP", src: "https://cdn.simpleicons.org/modelcontextprotocol" },
-        
-        // Databases & Vector
         { name: "PostgreSQL", src: "https://cdn.simpleicons.org/postgresql" },
         { name: "MongoDB", src: "https://cdn.simpleicons.org/mongodb" },
-        // { name: "Pinecone", src: "https://cdn.simpleicons.org/pinecone" },
         { name: "Redis", src: "https://cdn.simpleicons.org/redis" },
-        
-        // Cloud & DevOps
-        // { name: "AWS", src: "https://cdn.simpleicons.org/amazonaws" },
         { name: "Docker", src: "https://cdn.simpleicons.org/docker" },
         { name: "Kubernetes", src: "https://cdn.simpleicons.org/kubernetes" },
         { name: "Git", src: "https://cdn.simpleicons.org/git" },
         { name: "GitHub", src: "https://cdn.simpleicons.org/github" },
-        
-        // Automation & Design
         { name: "n8n", src: "https://cdn.simpleicons.org/n8n" },
         { name: "Figma", src: "https://cdn.simpleicons.org/figma" },
-        // { name: "Spline", src: "https://cdn.simpleicons.org/spline" },
         { name: "Vercel", src: "https://cdn.simpleicons.org/vercel" },
     ];
 
     return (
-        <div className="flex items-center h-full relative overflow-hidden bg-white/5 w-full">
+        <div className="flex items-center h-full relative overflow-hidden bg-white/[0.02] w-full">
              <div className="flex gap-8 md:gap-12 items-center animate-marquee w-max">
                 {[...tools, ...tools, ...tools, ...tools].map((tool, i) => (
                     <div key={i} className="flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
@@ -221,10 +207,10 @@ const ProfileCard = () => (
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
         <div className="absolute bottom-4 left-4 text-white">
-            <p className="text-xs uppercase opacity-50">Status</p>
+            <p className="text-xs uppercase opacity-50 tracking-wider">Status</p>
             <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="font-bold">Available</span>
+                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                <span className="font-bold font-display">Available</span>
             </div>
         </div>
     </div>
@@ -245,11 +231,10 @@ const VideoCard = () => {
                 muted={muted} 
                 playsInline
             />
-            <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay pointer-events-none" />
             
             <button 
                 onClick={() => setMuted(!muted)}
-                className="absolute bottom-4 right-4 bg-black/50 backdrop-blur p-2 rounded-full hover:bg-white/20 transition-colors"
+                className="absolute bottom-4 right-4 bg-black/60 backdrop-blur p-2 rounded-full hover:bg-white/20 transition-colors cursor-pointer"
             >
                 {muted ? (
                     <svg width="20" height="20" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
@@ -266,7 +251,6 @@ const MusicPlayer = () => {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        // Only create Audio object on client side
         if (typeof window !== 'undefined' && !audioRef.current) {
             audioRef.current = new Audio('/NEFFEX_-_Best_of_Me_(mp3.pm).mp3');
         }
@@ -284,7 +268,7 @@ const MusicPlayer = () => {
         <div className="h-full flex items-center gap-6 px-8 relative overflow-hidden group">
              {/* Background Blur */}
              <div className="absolute inset-0">
-                <img src="/songpic.webp" className="w-full h-full object-cover blur-2xl opacity-30 scale-150" alt="" />
+                <img src="/songpic.webp" className="w-full h-full object-cover blur-2xl opacity-20 scale-150" alt="" />
              </div>
 
              {/* Content */}
@@ -293,7 +277,7 @@ const MusicPlayer = () => {
                     <img src="/songpic.webp" className={`w-20 h-20 rounded-lg shadow-2xl ${playing ? 'animate-[spin_4s_linear_infinite]' : ''}`} alt="Album Art" />
                     <button 
                         onClick={() => setPlaying(!playing)}
-                        className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
+                        className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg cursor-pointer"
                     >
                         {playing ? (
                             <svg fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
@@ -304,16 +288,16 @@ const MusicPlayer = () => {
                  </div>
                  
                  <div className="flex-1">
-                     <h3 className="text-xl font-bold font-syne text-white">Best of Me</h3>
-                     <p className="text-white/60 text-sm">NEFFEX</p>
+                     <h3 className="text-xl font-bold font-display tracking-tight text-white">Best of Me</h3>
+                     <p className="text-zinc-400 text-sm">NEFFEX</p>
                  </div>
 
-                 {/* Visualizer bars */}
+                 {/* Visualizer bars with unified accent */}
                  <div className="flex gap-1 items-end h-8">
                      {[1,2,3,1,2].map((n, i) => (
                          <div 
                             key={i} 
-                            className={`w-1.5 bg-green-400 rounded-full ${playing ? `animate-music-bar-${n}` : 'h-1'}`} 
+                            className={`w-1.5 bg-[#7C78E5] rounded-full ${playing ? `animate-music-bar-${n}` : 'h-1'}`} 
                             style={{ animationDelay: `${i * 0.1}s` }} 
                         />
                      ))}
@@ -323,14 +307,12 @@ const MusicPlayer = () => {
     );
 };
 
-
 // --- Main Component ---
 
 const BentoGrid = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // GSAP Stagger Animation
     const ctx = gsap.context(() => {
         ScrollTrigger.batch(".bento-card", {
             onEnter: batch => gsap.to(batch, {

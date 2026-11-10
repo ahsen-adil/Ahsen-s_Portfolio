@@ -12,8 +12,8 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black">
-      {/* Particles - Rendered INSIDE the black background container */}
+    <div className="relative min-h-screen bg-[#08090B]">
+      {/* Particles - Rendered INSIDE the charcoal background container */}
       <ParticlesBackground />
 
       {/* Content */}

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Project data
+// Project data - unified under single muted accent
 const projects = [
   {
     id: 1,
@@ -13,7 +13,7 @@ const projects = [
     thumbnail: '/crm.jpeg',
     videoUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7437512098710044674?compact=1',
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
-    color: { from: '#6366F1', to: '#8B5CF6' },
+    color: { from: '#7C78E5', to: '#9591F2' },
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const projects = [
     thumbnail: 'social_media_ai_employee.jpeg',
     videoUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7427012988517122049?compact=1',
     tags: ['Python', 'AI/ML', 'n8n', 'OpenAI'],
-    color: { from: '#10B981', to: '#34D399' },
+    color: { from: '#7C78E5', to: '#9591F2' },
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const projects = [
     thumbnail: 'todo_app.jpeg',
     videoUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7412172535057858561?compact=1',
     tags: ['React', 'D3.js', 'WebSocket', 'Redis'],
-    color: { from: '#F59E0B', to: '#FBBF24' },
+    color: { from: '#7C78E5', to: '#9591F2' },
   },
 ];
 
@@ -59,7 +59,7 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           {/* Close Button - Top Right Corner */}
           <button
             onClick={onClose}
-            className="absolute -top-4 -right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all shadow-lg"
+            className="absolute -top-4 -right-4 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all shadow-lg cursor-pointer"
             aria-label="Close video"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,7 +68,7 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           </button>
 
           {/* Video Container - Limited Size */}
-          <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-2xl">
+          <div className="aspect-video bg-[#0C0E12] rounded-xl overflow-hidden shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_24px_48px_rgba(0,0,0,0.8)] border border-white/10">
             <iframe
               src={project.videoUrl}
               title={`${project.title} Demo`}
@@ -82,12 +82,11 @@ function VideoModal({ project, onClose }: { project: typeof projects[0]; onClose
           {/* Project Info - Compact Layout */}
           <div className="mt-4 flex items-start justify-between gap-4">
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
-              {/* <p className="text-gray-400 text-sm line-clamp-2">{project.fullDescription}</p> */}
+              <h3 className="text-xl font-bold font-display text-white mb-1 tracking-tight">{project.title}</h3>
             </div>
             <div className="flex flex-wrap gap-1.5 flex-shrink-0">
               {project.tags.map((tag) => (
-                <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-md bg-white/10 text-gray-300">
+                <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-md bg-white/10 text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                   {tag}
                 </span>
               ))}
@@ -107,8 +106,8 @@ export default function ProjectsSection() {
     <section className="relative bg-transparent overflow-hidden py-12 sm:py-16">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#7C78E5]/4 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7C78E5]/3 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,14 +120,14 @@ export default function ProjectsSection() {
         >
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
-              <p className="text-xs font-medium text-violet-400/80 uppercase tracking-widest mb-2">
+              <p className="text-xs font-semibold text-[#9591F2] uppercase tracking-widest mb-2">
                 Selected Work
               </p>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-                Featured <span className="text-gray-600">Projects</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-white tracking-tight">
+                Featured <span className="text-zinc-600">Projects</span>
               </h2>
             </div>
-            <p className="text-gray-500 text-sm max-w-md">
+            <p className="text-zinc-400 text-sm max-w-md">
               A curated selection of projects that showcase technical excellence and creative problem-solving.
             </p>
           </div>
@@ -140,13 +139,13 @@ export default function ProjectsSection() {
             <motion.button
               key={project.id}
               onClick={() => setActiveProject(index)}
-              className="block py-8 pr-8 text-right group"
+              className="block py-8 pr-8 text-right group cursor-pointer"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: index * 0.1 }}
             >
-              <span className={`text-2xl font-bold transition-all duration-500 ${
-                activeProject === index ? 'text-white' : 'text-gray-700 group-hover:text-gray-500'
+              <span className={`text-2xl font-bold font-display transition-all duration-500 ${
+                activeProject === index ? 'text-white' : 'text-zinc-700 group-hover:text-zinc-500'
               }`}>
                 0{index + 1}
               </span>
@@ -175,7 +174,7 @@ export default function ProjectsSection() {
                         initial={{ scale: 1.1 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 1.2, ease: 'easeOut' }}
-                        className="aspect-[4/3] rounded-2xl overflow-hidden"
+                        className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.7)]"
                       >
                         <img
                           src={project.thumbnail}
@@ -186,15 +185,15 @@ export default function ProjectsSection() {
 
                       {/* Gradient overlay */}
                       <div
-                        className="absolute inset-0 rounded-2xl opacity-20 transition-opacity duration-500"
+                        className="absolute inset-0 rounded-2xl opacity-15 transition-opacity duration-500 pointer-events-none"
                         style={{
-                          background: `linear-gradient(135deg, ${project.color.from}40, ${project.color.to}40)`,
+                          background: `linear-gradient(135deg, ${project.color.from}30, ${project.color.to}30)`,
                         }}
                       />
 
-                      {/* Border glow */}
+                      {/* Subtle border glow */}
                       <div
-                        className="absolute -inset-1 rounded-2xl opacity-30 blur-xl -z-10"
+                        className="absolute -inset-1 rounded-2xl opacity-15 blur-lg -z-10"
                         style={{
                           background: `linear-gradient(135deg, ${project.color.from}, ${project.color.to})`,
                         }}
@@ -207,10 +206,10 @@ export default function ProjectsSection() {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.3 }}
                         whileHover={{ scale: 1.05 }}
-                        className="absolute inset-0 flex items-center justify-center group"
+                        className="absolute inset-0 flex items-center justify-center group cursor-pointer"
                       >
-                        <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-white/15 transition-colors">
-                          <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center">
+                        <div className="w-24 h-24 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl group-hover:bg-black/70 group-hover:border-[#7C78E5]/50 transition-all">
+                          <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
                             <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M8 5v14l11-7z" />
                             </svg>
@@ -219,32 +218,20 @@ export default function ProjectsSection() {
                       </motion.button>
 
                       {/* Project number badge */}
-                      <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl bg-transparent/90 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-white">0{index + 1}</span>
+                      <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl bg-[#0D0F13]/90 backdrop-blur-sm border border-white/10 flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_4px_12px_rgba(0,0,0,0.5)]">
+                        <span className="text-2xl font-bold font-display text-white">0{index + 1}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Right: Content */}
                   <div className="order-1 lg:order-2 lg:pr-8">
-                    {/* Tags */}
-                    {/* <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.04] border border-white/[0.06] text-gray-400"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div> */}
-
                     {/* Title */}
                     <motion.h3
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
-                      className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight"
+                      className="text-4xl sm:text-5xl font-bold font-display text-white mb-6 leading-tight tracking-tight"
                     >
                       {project.title}
                     </motion.h3>
@@ -254,7 +241,7 @@ export default function ProjectsSection() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 }}
-                      className="text-gray-400 text-lg leading-relaxed mb-6"
+                      className="text-zinc-400 text-lg leading-relaxed mb-6"
                     >
                       {project.description}
                     </motion.p>
@@ -268,7 +255,7 @@ export default function ProjectsSection() {
                     >
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className="group inline-flex items-center gap-3 px-6 py-4 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                        className="group inline-flex items-center gap-3 px-6 py-4 rounded-full bg-white/[0.04] border border-white/10 hover:border-[#7C78E5]/40 hover:bg-[#7C78E5]/10 text-white font-medium shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_4px_12px_rgba(0,0,0,0.3)] transition-all duration-300 cursor-pointer"
                       >
                         <span>Watch Project Demo</span>
                         <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -285,12 +272,12 @@ export default function ProjectsSection() {
                       className="mt-12 flex items-center gap-4"
                     >
                       <div className="flex-1 h-px bg-gradient-to-r from-white/20 to-transparent" />
-                      <div className="flex items-center gap-2 text-gray-500 text-xs">
+                      <div className="flex items-center gap-2 text-zinc-500 text-xs font-medium">
                         <span>Navigate</span>
                         <div className="flex gap-1">
                           <button
                             onClick={() => setActiveProject((prev) => (prev - 1 + projects.length) % projects.length)}
-                            className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
+                            className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors cursor-pointer"
                           >
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -298,7 +285,7 @@ export default function ProjectsSection() {
                           </button>
                           <button
                             onClick={() => setActiveProject((prev) => (prev + 1) % projects.length)}
-                            className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
+                            className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors cursor-pointer"
                           >
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -320,8 +307,8 @@ export default function ProjectsSection() {
             <button
               key={index}
               onClick={() => setActiveProject(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeProject === index ? 'bg-white w-8' : 'bg-white/20'
+              className={`h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                activeProject === index ? 'bg-[#7C78E5] w-8' : 'bg-white/20 w-3'
               }`}
             />
           ))}
